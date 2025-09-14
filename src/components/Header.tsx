@@ -39,9 +39,9 @@ export default function Header() {
                 )}
               </Link>
             ))}
-            <button className="px-3 py-1 rounded-full border hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
+            <a href="https://zalo.me/0379723024" className="px-3 py-1 rounded-full border hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
               Contact Creator
-            </button>
+            </a>
           </nav>
 
           <ThemeToggle />

@@ -1,9 +1,10 @@
 "use client"
 
 import Image from 'next/image'
-import { FaFigma, FaBehance, FaDribbble, FaGithub, FaTwitter } from 'react-icons/fa'
+import { FaFigma, FaBehance, FaDribbble, FaGithub, FaTwitter, FaFacebook } from 'react-icons/fa'
 import Header from './Header'
 import PixelBlast from '@/background/HeroBackGround'
+import { Link } from 'lucide-react'
 export default function Hero() {
   return (
     <div className="w-full h-[100vh] relative">
@@ -43,8 +44,16 @@ export default function Hero() {
             <p className="mx-auto max-w-3xl opacity-90 mb-6">Helping startups and brands to craft expressive and engaging solutions for their software needs.</p>
 
             <div className="flex gap-4 justify-center mb-8">
-              <button className="px-6 py-2 rounded-full bg-black text-white shadow-lg">Discover More</button>
-              <button className="px-5 py-2 rounded-full border">Contact</button>
+              <button className="px-6 py-2 rounded-full bg-black hover:scale-105 cursor-pointer duration-300 text-white shadow-lg">Discover More</button>
+              <button className="px-5 py-2 rounded-full border hover:scale-105 cursor-pointer duration-300">Contact</button>
+              <a
+                href="https://facebook.com/nguyentrong3114"
+                target="_blank"
+                rel="noopener"
+                className="px-6 py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 shadow-lg hover:scale-105 duration-300"
+              >
+                <FaFacebook className="text-xl" /> Facebook
+              </a>
             </div>
           </div>
         </div>
