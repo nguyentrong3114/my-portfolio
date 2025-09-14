@@ -2,9 +2,6 @@
 import Hero from '@/components/Hero'
 import WorkExperience from '@/components/WorkExperience'
 import FunFacts from '@/components/FunFacts'
-import Board from '@/components/Board'
-import ScrollStack, { ScrollStackItem } from '@/components/ScrollList'
-
 export default function Home() {
   return (
     <main>
@@ -26,7 +23,6 @@ export default function Home() {
             Express your creativity! Draw, sketch, or just have fun with this interactive canvas.
           </p>
         </div>
-        <Board />
       </section>
     </main>
   )

@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-40 bg-transparent backdrop-blur-sm border-b border-transparent">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-12 py-4">
-        <Link href="/" className="w-9 h-9 rounded-md flex items-center justify-center font-bold hover:scale-110 transition-transform duration-300">
+        <Link href="/" className="w-9 h-9 rounded-md flex items-center justify-center font-bold hover:scale-110 transition-transform duration-300 text-3xl">
           Portfolio
         </Link>
 

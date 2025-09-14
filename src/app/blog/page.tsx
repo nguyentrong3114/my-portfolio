@@ -1,5 +1,6 @@
 "use client"
 import { useState } from 'react'
+import { FaEdit, FaCalendarAlt, FaClock, FaUser, FaArrowRight } from 'react-icons/fa'
 
 interface BlogPost {
   id: number
@@ -143,7 +144,7 @@ export default function BlogPage() {
               <div className="aspect-video bg-gradient-to-br from-blue-500/20 to-purple-500/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-80" />
                 <div className="absolute inset-0 flex items-center justify-center text-white text-6xl">
-                  📝
+                  <FaEdit />
                 </div>
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">
@@ -155,9 +156,15 @@ export default function BlogPage() {
               {/* Post Content */}
               <div className="p-6">
                 <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                  <span>{formatDate(post.date)}</span>
+                  <span className="flex items-center gap-1">
+                    <FaCalendarAlt />
+                    {formatDate(post.date)}
+                  </span>
                   <span>•</span>
-                  <span>{post.readTime}</span>
+                  <span className="flex items-center gap-1">
+                    <FaClock />
+                    {post.readTime}
+                  </span>
                 </div>
 
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
@@ -186,16 +193,16 @@ export default function BlogPage() {
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                      {post.author.charAt(0).toUpperCase()}
+                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm">
+                      <FaUser />
                     </div>
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                       {post.author}
                     </span>
                   </div>
                   
-                  <button className="text-blue-600 dark:text-blue-400 font-medium text-sm hover:underline transition-all duration-300 group-hover:translate-x-1">
-                    Read More →
+                  <button className="text-blue-600 dark:text-blue-400 font-medium text-sm hover:underline transition-all duration-300 group-hover:translate-x-1 flex items-center gap-1">
+                    Read More <FaArrowRight />
                   </button>
                 </div>
               </div>

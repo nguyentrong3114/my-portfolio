@@ -1,5 +1,17 @@
 "use client"
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { 
+  FaTools, 
+  FaDollarSign, 
+  FaBolt, 
+  FaBullseye, 
+  FaHandshake, 
+  FaQuestionCircle,
+  FaSearch,
+  FaChevronDown,
+  FaComments,
+  FaCalendarAlt
+} from 'react-icons/fa'
 
 interface FAQItem {
   id: number
@@ -119,13 +131,13 @@ export default function FAQPage() {
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'technical': return '🛠️'
-      case 'pricing': return '💰'
-      case 'process': return '⚡'
-      case 'services': return '🎯'
-      case 'collaboration': return '🤝'
-      case 'general': return '❓'
-      default: return '📋'
+      case 'technical': return FaTools
+      case 'pricing': return FaDollarSign
+      case 'process': return FaBolt
+      case 'services': return FaBullseye
+      case 'collaboration': return FaHandshake
+      case 'general': return FaQuestionCircle
+      default: return FaQuestionCircle
     }
   }
 
@@ -153,7 +165,7 @@ export default function FAQPage() {
               className="w-full px-6 py-4 pl-12 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
             />
             <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
-              🔍
+              <FaSearch />
             </div>
           </div>
         </div>
@@ -170,7 +182,7 @@ export default function FAQPage() {
                   : 'bg-white/80 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/20'
               }`}
             >
-              <span>{getCategoryIcon(category)}</span>
+              {React.createElement(getCategoryIcon(category), { className: "w-4 h-4" })}
               <span>{category}</span>
             </button>
           ))}
@@ -194,7 +206,7 @@ export default function FAQPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-start gap-4">
                       <span className="text-2xl mt-1">
-                        {getCategoryIcon(item.category)}
+                        {React.createElement(getCategoryIcon(item.category), { className: "w-6 h-6" })}
                       </span>
                       <div>
                         <h3 className="font-semibold text-gray-900 dark:text-white text-lg pr-8">
@@ -215,7 +227,7 @@ export default function FAQPage() {
                     <div className={`text-2xl transition-transform duration-300 ${
                       activeItem === item.id ? 'rotate-180' : ''
                     }`}>
-                      ⌄
+                      <FaChevronDown />
                     </div>
                   </div>
                 </button>
@@ -247,7 +259,7 @@ export default function FAQPage() {
         {/* Contact CTA */}
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/5 dark:to-purple-500/5 rounded-3xl p-8 md:p-12">
-            <div className="text-6xl mb-4">💬</div>
+            <div className="text-6xl mb-4"><FaComments className="w-16 h-16 mx-auto text-blue-500" /></div>
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">
               Still Have Questions?
             </h3>
@@ -255,11 +267,11 @@ export default function FAQPage() {
               Can't find the answer you're looking for? I'm here to help! Reach out and I'll get back to you as soon as possible.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                Ask a Question
+              <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg flex items-center justify-center gap-2">
+                <FaComments /> Ask a Question
               </button>
-              <button className="px-8 py-3 bg-white/80 dark:bg-white/10 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-gray-100 dark:hover:bg-white/20 transition-all duration-300">
-                Schedule a Call
+              <button className="px-8 py-3 bg-white/80 dark:bg-white/10 text-gray-900 dark:text-white font-semibold rounded-full hover:bg-gray-100 dark:hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2">
+                <FaCalendarAlt /> Schedule a Call
               </button>
             </div>
           </div>

@@ -31,8 +31,6 @@ export default function Hero() {
           />
           </div>
         </div>
-        <Header />
-
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-full max-w-6xl px-8 py-12 text-center pointer-events-auto z-50">
             <div className="flex flex-col items-center gap-3 mb-4">
@@ -47,14 +45,6 @@ export default function Hero() {
             <div className="flex gap-4 justify-center mb-8">
               <button className="px-6 py-2 rounded-full bg-black text-white shadow-lg">Discover More</button>
               <button className="px-5 py-2 rounded-full border">Contact</button>
-            </div>
-
-            <div className="flex gap-6 justify-center mt-6">
-              <span className="w-14 h-14 rounded-lg border-2 flex items-center justify-center"><FaBehance /></span>
-              <span className="w-14 h-14 rounded-lg border-2 flex items-center justify-center"><FaFigma /></span>
-              <span className="w-14 h-14 rounded-lg border-2 flex items-center justify-center"><FaDribbble /></span>
-              <span className="w-14 h-14 rounded-lg border-2 flex items-center justify-center"><FaGithub /></span>
-              <span className="w-14 h-14 rounded-lg border-2 flex items-center justify-center"><FaTwitter /></span>
             </div>
           </div>
         </div>

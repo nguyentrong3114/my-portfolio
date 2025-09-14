@@ -1,8 +1,18 @@
 "use client"
 import { useState, useEffect, useRef } from 'react'
+import { 
+  FaGlobe, 
+  FaCoffee, 
+  FaLaptopCode, 
+  FaLanguage, 
+  FaTrophy, 
+  FaBook, 
+  FaRocket, 
+  FaBolt 
+} from 'react-icons/fa'
 
 interface StatItem {
-  icon: string
+  icon: React.ComponentType<any>
   number: number
   suffix: string
   label: string
@@ -21,7 +31,7 @@ export default function FunFacts() {
 
   const stats: StatItem[] = [
     { 
-      icon: '🌍', 
+      icon: FaGlobe, 
       number: 15, 
       suffix: '+', 
       label: 'Countries Visited', 
@@ -29,7 +39,7 @@ export default function FunFacts() {
       description: 'From Asia to Europe, exploring cultures and cuisines'
     },
     { 
-      icon: '☕', 
+      icon: FaCoffee, 
       number: 1200, 
       suffix: '+', 
       label: 'Cups of Coffee', 
@@ -37,7 +47,7 @@ export default function FunFacts() {
       description: 'Fueling late-night coding sessions since 2020'
     },
     { 
-      icon: '💻', 
+      icon: FaLaptopCode, 
       number: 24, 
       suffix: '', 
       label: 'Open Source Projects', 
@@ -45,7 +55,7 @@ export default function FunFacts() {
       description: 'Contributing to the developer community worldwide'
     },
     { 
-      icon: '🎯', 
+      icon: FaLanguage, 
       number: 5, 
       suffix: '', 
       label: 'Languages Spoken', 
@@ -53,7 +63,7 @@ export default function FunFacts() {
       description: 'English, Vietnamese, Japanese, Chinese, Korean'
     },
     { 
-      icon: '🏆', 
+      icon: FaTrophy, 
       number: 8, 
       suffix: '', 
       label: 'Awards Won', 
@@ -61,7 +71,7 @@ export default function FunFacts() {
       description: 'Recognition for outstanding projects and contributions'
     },
     { 
-      icon: '📚', 
+      icon: FaBook, 
       number: 150, 
       suffix: '+', 
       label: 'Books Read', 
@@ -69,7 +79,7 @@ export default function FunFacts() {
       description: 'Continuous learning through technical and non-fiction books'
     },
     { 
-      icon: '🚀', 
+      icon: FaRocket, 
       number: 95, 
       suffix: '%', 
       label: 'Client Satisfaction', 
@@ -79,7 +89,7 @@ export default function FunFacts() {
       maxValue: 100
     },
     { 
-      icon: '⚡', 
+      icon: FaBolt, 
       number: 50000, 
       suffix: '+', 
       label: 'Lines of Code', 
@@ -197,7 +207,7 @@ export default function FunFacts() {
                 {/* Animated Icon */}
                 <div className="text-5xl mb-4 transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 filter group-hover:drop-shadow-lg">
                   <span className="inline-block animate-bounce-gentle" style={{ animationDelay: `${index * 200}ms` }}>
-                    {stat.icon}
+                    <stat.icon className="w-12 h-12 mx-auto" />
                   </span>
                 </div>
                 
